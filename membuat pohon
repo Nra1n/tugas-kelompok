@@ -1,0 +1,45 @@
+#kelompok 3
+#1. Naufal Rahisna
+#2. Ela Livia
+#3. Lalu Gitan Ferdiansyah
+#4. Budiman Efendi
+#5. M.Rifki Anshori
+
+#Tugas membuat pohon
+import turtle
+
+def draw_branch(branch_length, t):
+    if branch_length > 5:
+        t.forward(branch_length)
+        
+        t.right(20)
+        draw_branch(branch_length - 10, t)
+        
+        t.left(40)
+        draw_branch(branch_length - 10, t)
+        
+        t.right(20)
+        t.backward(branch_length)
+
+def draw_tree():
+    
+    screen = turtle.Screen()
+    screen.bgcolor("white")
+    t = turtle.Turtle()
+    t.color("blue")
+    t.pensize(5)
+    t.left(90)
+    t.up()
+    t.backward(100)
+    t.down()
+    t.speed(0)
+
+    
+    draw_branch(60, t)
+
+    
+    t.hideturtle()
+    screen.mainloop()
+
+
+draw_tree()
